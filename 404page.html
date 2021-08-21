@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@channel | Page not found</title>
+    
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body onload="SetTheme('theme-light')">
+    <div class = 'row navbar'>
+        <button class = 'col-1 button text-center navbar-element' onclick = "location.href  = '/'">@channel</button>
+        <div class = 'col-4 navbar-element no-padding no-clearfix'>
+            <input type = 'text' name = 'search' placeholder="Search..." class = 'col-12 input input-text' oninput="GetSearchResults(this)" onfocus="DisplayResults(true)" onblur="DisplayResults(false)"/>
+            <div class = 'col-4 result-container' id = 'result-container'></div>
+        </div>
+        <div class = 'col-7 navbar-element no-padding o-600'>
+            <button class = 'button button-badge align-right' onclick="ToggleTheme()"><i class = 'fa fa-adjust'></i></button>
+        </div>
+    </div>
+    <div class = 'modal' id = 'modal'>
+        <div class = "modal-content">
+            <div class = 'row header'>
+                <span class = 'col-11' id = 'modal-header'>H</span>
+                <button class = 'button modal-close align-right' id = 'modal-close-button'>&times;</button>
+            </div>
+            <div class = 'body' id = 'modal-body'>H</div>
+        </div>
+    </div>
+    <script src="/js/base.js"></script>
+    <script>
+        Prompt('Oops...', 'Looks like the page you are looking for does not exists.<br>Make sure you have entered the correct URL', Colors.warn);
+    </script>
+</body>
+</html>

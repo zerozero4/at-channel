@@ -1,0 +1,778 @@
+/***********************************************************
+ *  Fonts
+***********************************************************/
+@import url('/css/quicksand.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+/***********************************************************
+ *  Base Fixes
+************************************************************/
+html, body {
+    height: 100%;
+}
+
+/***********************************************************
+ *  Global Themes
+***********************************************************/
+:root {
+    --ideal-viewport-width: 1920;
+    --ideal-viewport-height: 1080;
+    --current-viewport-width: 100vW;
+    --current-viewport-height:100vH;
+
+    --hint-warn: tomato;
+    --hint-info: limegreen;
+}
+
+/***********************************************************
+ *  Themes - Theme Light
+************************************************************/
+.theme-light {
+    --background-shade-light:   #eee;
+    --background-shade-dark:    #ccc;
+
+    --foreground-shade-light:   #111;
+    --foreground-shage-dark:    #333;
+
+    --base-font-color: #222;
+    --ideal-font-size: 22;
+    --ideal-border-radius: 16;
+    --ideal-padding: 8;
+
+    --button-padding: 32px;
+    --button-border-basel: 1px solid #ccc;
+    --button-border-hover: 1px solid #999;
+    --button-border-active:1px solid #111;
+
+    --input-border-radius: 32px;
+    --input-padding: 8px;
+    --input-text-border-basel: 1px solid #ddd;
+    --input-text-border-hover: 1px solid #888;
+    --input-text-border-focus: 1px solid #222;
+    --input-font-color: #111;
+    --input-background: #eee;
+
+    --card-container-spacing: 4px;
+    --card-spacing: 4px;
+
+    --card-header-top-radius: 16px;
+    --card-header-bottom-radius: 0px;
+    --card-header-background: #ccc;
+    --card-header-font-color: #111;
+
+    --card-footer-top-radius: 0px;
+    --card-footer-bottom-radius: 16px;
+    --card-footer-background: #ddd;
+    --card-footer-font-color: #111;
+
+    --base-font-size: calc( var(--ideal-font-size) * (var(--current-viewport-width) / var(--ideal-viewport-width) ) );
+    --base-font-size-125: calc( var(--base-font-size) * 1.25 );
+    --base-font-size-15: calc( var(--base-font-size) * 1.5 );
+    --base-font-size-175: calc( var(--base-font-size) * 1.75 );
+    --base-font-size-2: calc( var(--base-font-size) * 2 );
+    
+    --base-padding: calc( var(--ideal-padding) * (var(--current-viewport-width) / var(--ideal-viewport-width) ) );
+    --base-border-radius: calc( var(--ideal-border-radius) * (var(--current-viewport-width) / var(--ideal-viewport-width) ) );
+
+    --result-container-offset: calc( 2 * ( var(--base-padding)  + var(--input-padding)) + 1em);
+    
+    --base-padding-2: calc( var(--base-padding) * 2 );
+}
+
+/***********************************************************
+ *  Themes - Theme Dark
+************************************************************/
+.theme-dark {
+    --background-shade-light:   #111;
+    --background-shade-dark:    #333;
+
+    --foreground-shade-light:   #eee;
+    --foreground-shage-dark:    #ccc;
+
+    --base-font-color: #ddd;
+    --ideal-font-size: 22;
+    --ideal-border-radius: 28;
+    --ideal-padding: 8;
+
+    --button-padding: 32px;
+    --button-border-basel: 1px solid #ddd;
+    --button-border-hover: 1px solid #888;
+    --button-border-active:1px solid #222;
+
+    --input-border-radius: 32px;
+    --input-padding: 8px;
+    --input-text-border-basel: 1px solid #222;
+    --input-text-border-hover: 1px solid #888;
+    --input-text-border-focus: 1px solid #ddd;
+    --input-font-color: #eee;
+    --input-background: #111;
+
+    --card-container-spacing: 4px;
+    --card-spacing: 4px;
+
+    --card-header-top-radius: 16px;
+    --card-header-bottom-radius: 0px;
+    --card-header-background: #333;
+    --card-header-font-color: #ccc;
+
+    --card-footer-top-radius: 0px;
+    --card-footer-bottom-radius: 16px;
+    --card-footer-background: #444;
+    --card-footer-font-color: #eee;
+
+    --base-font-size: calc( var(--ideal-font-size) * (var(--current-viewport-width) / var(--ideal-viewport-width) ) );
+    --base-font-size-125: calc( var(--base-font-size) * 1.25 );
+    --base-font-size-15: calc( var(--base-font-size) * 1.5 );
+    --base-font-size-175: calc( var(--base-font-size) * 1.75 );
+    --base-font-size-2: calc( var(--base-font-size) * 2 );
+    
+    --base-padding: calc( var(--ideal-padding) * (var(--current-viewport-width) / var(--ideal-viewport-width) ) );
+    --base-border-radius: calc( var(--ideal-border-radius) * (var(--current-viewport-width) / var(--ideal-viewport-width) ) );
+
+    --result-container-offset: calc( 2 * ( var(--base-padding)  + var(--input-padding)) + 1em);
+
+    --base-padding-2: calc( var(--base-padding) * 2 );
+}
+
+/*****************************************
+ * Theme - Default
+******************************************/
+.theme-default {
+    --background-shade-light:   rgb(194, 130, 255);
+    --background-shade-dark:    rgb(157, 54, 253);
+
+    --foreground-shade-light:   #111;
+    --foreground-shage-dark:    #333;
+
+    --base-font-color: #222;
+    --ideal-font-size: 22;
+    --ideal-border-radius: 16;
+    --ideal-padding: 8;
+
+    --button-padding: 32px;
+    --button-border-basel: 1px solid #ccc;
+    --button-border-hover: 1px solid #999;
+    --button-border-active:1px solid #111;
+
+    --input-border-radius: 32px;
+    --input-padding: 8px;
+    --input-text-border-basel: 1px solid #ddd;
+    --input-text-border-hover: 1px solid #888;
+    --input-text-border-focus: 1px solid #222;
+    --input-font-color: #111;
+    --input-background: #eee;
+
+    --card-container-spacing: 4px;
+    --card-spacing: 4px;
+
+    --card-header-top-radius: 16px;
+    --card-header-bottom-radius: 0px;
+    --card-header-background: rgb(157, 54, 253);
+    --card-header-font-color: #111;
+
+    --card-footer-top-radius: 0px;
+    --card-footer-bottom-radius: 16px;
+    --card-footer-background: rgb(203, 150, 253);
+    --card-footer-font-color: #111;
+
+    --base-font-size: calc( var(--ideal-font-size) * (var(--current-viewport-width) / var(--ideal-viewport-width) ) );
+    --base-font-size-125: calc( var(--base-font-size) * 1.25 );
+    --base-font-size-15: calc( var(--base-font-size) * 1.5 );
+    --base-font-size-175: calc( var(--base-font-size) * 1.75 );
+    --base-font-size-2: calc( var(--base-font-size) * 2 );
+    
+    --base-padding: calc( var(--ideal-padding) * (var(--current-viewport-width) / var(--ideal-viewport-width) ) );
+    --base-border-radius: calc( var(--ideal-border-radius) * (var(--current-viewport-width) / var(--ideal-viewport-width) ) );
+
+    --result-container-offset: calc( 2 * ( var(--base-padding)  + var(--input-padding)) + 1em);
+    
+    --base-padding-2: calc( var(--base-padding) * 2 );
+
+    --reaction-background: black;
+}
+
+* {
+    font-family: 'Quicksand', Helvetica, Verdana, 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+
+    /*******************************************************
+     *  Unless specified margin and padding are zero
+    ********************************************************/
+    margin: 0;
+    padding: 0;
+
+    color: var(--base-font-color)
+}
+
+ul, ol, li {
+    margin-inline-start: var(--base-padding);
+}
+
+body {
+    background: var(--background-shade-light);
+    display: none;
+}
+
+body * {
+    font-size: var(--base-font-size);
+}
+
+/***********************************************************
+ *  CSS Grid layout Specifications
+***********************************************************/
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    display: block;
+    float: left;
+    font-size: 1em;
+    border: 1px solid transparent;
+    
+    padding: var(--base-padding);
+}
+
+.col-1  {   width:  8.33%;      }
+.col-2  {   width:  16.66%;     }
+.col-3  {   width:  25%;        }
+.col-4  {   width:  33.33%;     }
+.col-5  {   width:  41.66%;     }
+.col-6  {   width:  50%;        }
+.col-7  {   width:  58.33%;     }
+.col-8  {   width:  66.66%;     }
+.col-9  {   width:  75%;        }
+.col-10 {   width:  83.33%;     }
+.col-11 {   width:  91.66%;     }
+.col-12 {   width:  100%;       }
+
+.no-padding {   padding: 0; }
+
+.flex           {   display: flex;  }
+.flex-content   {   flex: 1;        }
+
+/******************************************
+ *  Screen specific declarations
+*******************************************/
+.o-750 {    display: block;     }
+
+@media screen and (max-width: 600px) {
+    .o-750 {    display: none;  }
+}
+
+/******************************************
+ *  Element Diemensional Properties
+*******************************************/
+.full-height {
+    height:     96%;
+    max-height: 96%;
+}
+
+.full-height-scroll {
+    overflow-y: auto;
+}
+
+/******************************************
+ *  Element Alignment
+*******************************************/
+.align-left     {   float: left;    }
+.align-right    {   float: right;   }
+
+/******************************************
+ *  Text alignemnt  
+*******************************************/
+.text-left      {   text-align: left;       }
+.text-center    {   text-align: center;     }
+.text-right     {   text-align: right;      }
+
+/******************************************
+ *  Borders
+*******************************************/
+.border-left    {   border-bottom-left-radius: var(--base-border-radius); border-top-left-radius: var(--base-border-radius); }
+.border-right   {   border-bottom-right-radius: var(--base-border-radius); border-top-right-radius: var(--base-border-radius);}
+
+/******************************************
+ *  Navigation bar
+*******************************************/
+.no-clearfix {
+    clear: none;
+}
+
+.navbar {
+    padding: var(--base-padding);
+    background: var(--background-shade-dark);
+
+    border-radius: var(--base-border-radius);
+    overflow: hidden;
+}
+
+.result-container {
+    display: none;
+    position: absolute;
+    top: var(--result-container-offset);
+    overflow-y: scroll;
+    z-index: 10;
+    background-color: var(--background-shade-dark);
+
+    max-height: 25vH;
+    padding: 8px;
+
+    border-bottom-left-radius: var(--base-border-radius);
+    border-bottom-right-radius: var(--base-border-radius);
+
+    border-left: 1px solid var(--background-shade-light);
+    border-right: 1px solid var(--background-shade-light);
+    border-bottom: 1px solid var(--background-shade-light);
+}
+
+.horizontal-line {
+    border: var(--input-text-border-basel);
+}
+
+/******************************************
+ *  Lists
+*******************************************/
+.no-list-style {
+    list-style: none;
+}
+
+/******************************************
+ *  Anchors
+*******************************************/
+a {
+    background: var(--background-shade-dark);
+    padding: var(--base-padding);
+    border-radius: var(--base-border-radius);
+}
+
+a:hover {
+    background: var(--background-shade-light);
+}
+
+/******************************************
+ *  Buttons
+*******************************************/
+
+.button {
+    background: var(--background-shade-light);
+    
+    padding: var(--base-padding);
+
+    padding-left: var(--button-padding);
+    padding-right: var(--button-padding);
+
+    font-size: var(--base-font-size);
+    
+    border: var(--button-border-basel);
+    border-radius: var(--base-border-radius);
+
+    cursor: pointer;
+}
+
+.button-badge {
+    padding-left: calc(var(--base-padding) * 2);
+    padding-right: calc(var(--base-padding) * 2);
+}
+
+.button-text-only {
+    background: transparent;
+    border: 0;
+    padding: var(--base-padding);
+    font-size: var(--base-font-size);
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.button-badge-round { border-radius: 100%;    }
+
+.button:hover {
+    border: var(--button-border-hover);
+}
+
+.button:active {
+    bottom: var(--button-border-active);
+}
+
+/******************************************
+ *  Cards
+*******************************************/
+.card-container {
+    padding: var(--card-container-spacing);
+}
+
+.card {
+    padding: var(--card-spacing);
+}
+
+.card > .header {
+    border-top-left-radius: var(--card-header-top-radius);
+    border-top-right-radius: var(--card-header-top-radius);
+    border-bottom-left-radius: var(--card-header-bottom-radius);
+    border-bottom-right-radius: var(--card-header-bottom-radius);
+
+    padding: calc( var(--base-padding) * 2 );
+
+    background: var(--card-header-background);
+    color: var(--card-header-font-color);
+}
+
+.card > .content {
+    border-top-left-radius: var(--card-footer-top-radius);
+    border-top-right-radius: var(--card-footer-top-radius);
+    border-bottom-left-radius: var(--card-footer-bottom-radius);
+    border-bottom-right-radius: var(--card-footer-bottom-radius);
+
+    padding: calc( var(--base-padding) * 2 );
+
+    background: var(--card-footer-background);
+    color: var(--card-footer-font-color); 
+}
+
+.card > .content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*******************************************************************************
+ *  Hints
+*******************************************************************************/
+.hint-warn {    color: var(--hint-warn);    }
+.hint-info {    color: var(--hint-info);    }
+
+/******************************************
+ *  Form input layouts
+*******************************************/
+.input {
+    /**
+     *  CHROME FIX: Chrome defines the font-size to be 13.333333px (Don't know why tho. 🤔)
+    **/
+    font-size: var(--base-font-size);
+    border-radius: var(--input-border-radius);
+    padding-left: var(--input-padding);
+    padding-right: var(--input-padding);
+    background: var(--input-background) ;
+    color: var(--input-font-color);
+
+    width: 100%;
+}
+
+.input:focus {
+    /**
+     *  CHROME FIX: Chrome by default adds an outline to the selected input-field.
+    **/
+    outline: none;
+}
+
+.input-text {
+    border: var(--input-text-border-basel);
+}
+
+textarea.input-text {
+    min-height: 256px;
+    padding: var(--base-padding);
+    padding-inline: calc(var(--base-padding) * 2);
+}
+
+.input-text:hover {
+    border: var(--input-text-border-hover);
+}
+
+.input-text:focus {
+    border: var(--input-text-border-focus);
+}
+
+.input-padding {
+    padding: var(--base-padding);
+}
+
+.action-container {
+    margin-top: var(--base-padding);
+    padding: var(--base-padding);
+}
+
+/************************************************************************
+ *  Modal Popup
+************************************************************************/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--current-viewport-width);
+    height: var(--current-viewport-height);
+    background: rgba(10, 10, 10, 0.5);
+    z-index: 16;
+    overflow: hidden;
+    display: none;
+
+    backdrop-filter: blur(2px);
+}
+
+.modal .modal-content {
+    width: calc(var(--current-viewport-width) / 2);
+    height: calc(var(--current-viewport-height) / 2);
+    transform: translate(50%, 50%);
+}
+
+.modal .modal-content .header {
+    width: 100%;
+    border-top-left-radius: var(--base-border-radius);
+    border-top-right-radius: var(--base-border-radius);
+
+    background: var(--hint-warn);
+    padding: var(--base-padding);
+}
+
+.modal .modal-content .body {
+    width: 100%;
+    max-height: 100%;
+    border-bottom-left-radius: var(--base-border-radius);
+    border-bottom-right-radius: var(--base-border-radius);
+    padding: calc( var(--base-padding) * 2 );
+    font-size: var(--base-font-size);
+    background: var(--background-shade-dark);
+    overflow: auto;
+}
+
+.modal .modal-content .header button.modal-close {
+    padding-left: calc( var(--base-padding) * 2 );
+    padding-right: calc( var(--base-padding) * 2 );
+}
+
+/******************************************
+ *  Chat user Badge
+*******************************************/
+.badge {
+    margin-bottom: calc(var(--base-padding) / 2);
+    padding: calc( var(--base-padding) * 2);
+    background: var(--background-shade-dark);
+}
+
+.badge-chat-user {
+    text-align: right;
+    font-size: var(--base-font-size-15);
+    text-align: center;
+    border-radius: var(--base-border-radius);
+    border: var(--button-border-basel);
+    cursor: pointer;
+
+    transition: .15s;
+}
+
+.badge-chat-user:hover {
+    background: var(--background-shade-light);
+}
+
+.badge-chat-user.badge-chat-user-active {
+    background: var(--foreground-shade-light);
+    color: var(--background-shade-dark);
+}
+
+/******************************************
+ *  Chat
+*******************************************/
+.message {
+    margin-bottom: var(--base-padding);
+}
+
+.message .message-content, .message .message-timestamp {
+    cursor: pointer;
+}
+
+.message[data-value="message-user"] .message-content {
+    float: right;
+    background: var(--background-shade-light);
+    border-top-left-radius: var(--base-border-radius);
+    border-bottom-left-radius: var(--base-border-radius);
+    padding: calc( var(--base-padding) * 2 );
+    padding-right: calc( var(--base-padding) * 2 + 16px);
+    min-width: 48px;
+}
+
+.message[data-value="message-user"] .message-timestamp {
+    text-align: right;
+    font-size: calc( var(--base-font-size) / 1.5 );
+}
+
+.message[data-value="message-group"] .message-content {
+    float: left;
+    background: var(--background-shade-light);
+    border-top-right-radius: var(--base-border-radius);
+    border-bottom-right-radius: var(--base-border-radius);
+    padding: calc( var(--base-padding) * 2 );
+    padding-left: calc( var(--base-padding) * 2 + 16px);
+    min-width: 48px;
+}
+.message[data-value="message-group"] .message-timestamp {
+    text-align: left;
+    font-size: calc( var(--base-font-size) / 1.5 );
+}
+
+.badge.badge-chat-user .indicator {
+    display: none;
+    float: right;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+/******************************************
+ *  Reaction buttons
+*******************************************/
+.button-reaction {
+    border: 0;
+    background: var(--reaction-background);
+}
+
+.button-reaction:hover {
+    border: 0;
+}
+
+.button-reaction-like:hover {
+    color: var(--foreground-shade-dark);
+    background: rgb(37, 112, 232);
+}
+
+.button-reaction-like {
+    color: rgb(37, 112, 232);
+
+    border-radius: 0;
+    border-bottom-left-radius: var(--base-border-radius);
+}
+
+.button-reaction > i { color: inherit; margin-right: var(--base-padding); }
+
+.button-reaction-comment:hover {
+    background: rgb(59, 207, 23);
+    color: var(--foreground-shade-dark);
+}
+
+.button-reaction-comment {
+    color: rgb(59, 207, 23);
+
+    border-radius: 0;
+}
+
+.button-reaction-favourite:hover {
+    background: rgb(224, 20, 190);
+    color: var(--foreground-shade-dark);
+}
+
+.button-reaction-favourite {
+    color: rgb(224, 20, 190);
+
+    border-radius: 0;
+    border-bottom-right-radius: var(--base-border-radius);
+}
+
+.counter {
+    color: inherit;
+    font-weight: 900;
+    padding: var(--base-padding);
+    padding-inline: calc(var(--base-padding) * 2);
+}
+
+/******************************************
+ *  Comments
+*******************************************/
+.comment {
+    border-radius: 0;
+    border-left: 2px solid var(--foreground-shade-light);
+    padding-top: calc(var(--base-padding) * 2);
+}
+.comment .comment { margin-left: calc(var(--base-padding) * 6);   }
+
+.comment .comment-author, .comment .comment-timestamp {
+    font-size: calc( var(--base-font-size) / 1.5 );
+    font-weight: 900; 
+    padding-left: calc(var(--base-padding) * 2);
+}
+
+.comment [data-button-reply] {
+    padding-left: calc(var(--base-padding) * 2 );
+}
+
+.comment-timestamp {    text-align: right;      }
+.comment-content {
+    padding-left: calc(var(--base-padding) * 2);
+}
+
+/******************************************
+ *  Scrollbars
+*******************************************/
+::-webkit-scrollbar {
+    background: transparent;
+    border-radius: var(--base-border-radius);
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--foreground-shade-light);
+    border-radius: var(--base-border-radius);
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/******************************************
+ * Miscellaneous & Fixes
+*******************************************/
+[contenteditable]:empty:not(:focus):before{
+    content:attr(data-ph);
+    color: var(--foreground-shage-dark);
+    font-style:italic;
+}
+
+[contenteditable]:hover {
+    outline: none;
+    border: 2px dashed var(--foreground-shade-light);
+}
+
+[contenteditable]:focus {
+    outline: none;
+    border: 2px dashed var(--foreground-shade-light);
+}
+
+#reply-editor {
+    border: var(--input-text-border-hover);
+    border-radius: var(--base-border-radius);
+    padding: var(--base-padding-2);
+}
+
+.seperator {
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    padding: calc(var(--base-padding) * 2 );    
+}
+
+.hover-success:hover, .hover-info:hover       
+                        {   background: var(--hint-info); color: var(--foreground-shage-dark);    }
+.hover-warn:hover       {   background: var(--hint-warn); color: var(--background-shade-light);   }
+
+.no-border              {   border: 0px;    }
+
+.no-border-radius       {   border-radius: 0 !important;   }
+.no-border-bottom-radius{   border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;    }
+.no-border-top-radius   {   border-top-left-radius: 0 !important; border-top-right-radius: 0 !important;          }
+.no-border-left-radius  {   border-bottom-left-radius: 0 !important; border-top-left-radius: 0 !important;        }
+.no-border-right-radius {   border-bottom-right-radius: 0 !important;border-top-right-radius: 0 !important;       }
+
+.font-subtitle {    font-size: calc(var(--base-font-size) / 1.15 ); font-weight: 900;    }
+
+[data-reaction-status = 'like'] {
+    background: rgb(37, 112, 232);
+    color: black;
+}
+
+.indicator {
+    background: red;
+    color: white;
+    border-radius: 100%;
+    display: none;
+    padding-block: 2px;
+    padding-inline: 6px;
+}

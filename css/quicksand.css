@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/quicksand/Quicksand_Book.otf');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/quicksand/Quicksand_Bold.otf');
+    font-weight: bold;
+}
